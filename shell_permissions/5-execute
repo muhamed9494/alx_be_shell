@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if the file 'hello' exists
+if [ ! -f hello ]; then
+  echo "Error: File 'hello' not found."
+  exit 1
+fi
+
+# Add execute permission for the owner
+chmod u+x hello
+
+# Check if the permissions were changed successfully
+if [ -x hello ]; then
+  echo "Execute permission granted to owner."
+else
+  echo "Failed to grant execute permission."
+  exit 1
+fi
